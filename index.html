@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame" />
+    <script src="libs/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./Audiocontrols.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!--light -->
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity
+        light="type: directional; color: #FFF; intensity: .1"
+        position="-0.5 1 1"
+      ></a-entity>
+
+      <!-- All model assets for this Project -->
+      <a-assets>
+        <a-asset-item
+          id="ComputerM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2Fout.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="IKEAM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2Fout%20(2).glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="DoorsM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FDoor.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="ViveM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FVive.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="BedM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="WindowM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FWindow.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="PillowM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FPillow.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="BooksM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBooks.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="ClockM"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FClock1.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <audio
+          id="tuba"
+          src="https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FRhapsody%20for%20tuba%20solo%20-%20N.Kornyushin.mp3?v=1601862254391"
+          preload="auto"
+          crossorigin="anonymous"
+        ></audio>
+      </a-assets>
+
+      <!--Hand made models-->
+
+      <!-- Bed-->
+      <a-box
+        position="3 1.5 -1.5"
+        scale=".1 1 5"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="3 1.5 -1.5"
+        scale=".15 .8 4.7"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBack_Bed_texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="3 1 -4"
+        scale=".15 2 .15"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="3 1 1"
+        scale=".15 2 .15"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="3 .5 -1.5"
+        scale=".15 .15 5"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="1 .5 -4"
+        scale=".15 .15 8"
+        rotation="0 90 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="1 .5 1"
+        scale=".15 .15 8"
+        rotation="0 90 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-3 .5 -1.5"
+        scale=".15 .15 5"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-3 0 -4"
+        scale=".15 1.16 .15"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-3 0 1"
+        scale=".15 1.16 .15"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBed_Frame_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-.15 .6 -1.5"
+        scale="5.5 .5 4.5"
+        rotation="0 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBlue_Bed_Texture.jpg"
+      ></a-box>
+
+      <!--Bed side table right-->
+      <a-box
+        position="2.5 1.5 2"
+        scale="1 .05 1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.5 .5 2"
+        scale="1 .05 1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.1 .5 2.4"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.1 .5 1.6"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.9 .5 2.4"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.9 .5 1.6"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+
+      <!--Bed side table left-->
+      <a-box
+        position="2.5 1.5 -5"
+        scale="1 .05 1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.5 .5 -5"
+        scale="1 .05 1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.1 .5 -5.4"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.1 .5 -4.6"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.9 .5 -5.4"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+      <a-box
+        position="2.9 .5 -4.6"
+        scale=".1 2 .1"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+
+      <!--Desk-->
+      <a-box
+        position="-8 1.75 3.5"
+        scale="5 .1 2"
+        rotation="0 0 0"
+        color="black"
+      ></a-box>
+
+      <a-cylinder
+        position="-5.75 0 4.35"
+        scale=".05 3.5 .05"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-5.75 0 2.65"
+        scale=".05 3.5 .05"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-cylinder>
+
+      <!--Moniter-->
+      <a-cylinder
+        position="-6.7 1.85 3.2"
+        scale=".35 .02 .35"
+        color="white"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-6.7 1.85 3.2"
+        scale=".025 .5 .025"
+        color="white"
+      ></a-cylinder>
+
+      <a-box
+        position="-6.7 2.55 3.2"
+        scale="2.25 1 .05"
+        rotation="0 -10 0"
+        color="white"
+      ></a-box>
+
+      <a-box
+        position="-6.7 2.55 3.21"
+        scale="2.2 .95 .04"
+        rotation="0 -10 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FDesktop.png"
+      ></a-box>
+
+      <!-- Chair-->
+      <a-box
+        position="-7 1.1 5.75"
+        scale="1.25 .1 1.25"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-7 1.7 6.33"
+        scale="1.25 .1 1.25"
+        rotation=" 90 0 0"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-7.55 .14 6.33"
+        scale=".1 2 .1"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-6.45 .14 6.33"
+        scale=".1 2 .1"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-7.55 .14 5.18"
+        scale=".1 2 .1"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <a-box
+        position="-6.45 .14 5.18"
+        scale=".1 2 .1"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FTable_Leg_Texture.jpg"
+      ></a-box>
+
+      <!--Fan-->
+      <a-cone position="-8.4 .1 0" scale="1.2 .3 1.2" color="black"></a-cone>
+
+      <a-cylinder
+        position="-8.4 .1 0"
+        scale=".08 4 .08"
+        color="black"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-8.4 2 0"
+        scale=".15 .5 .15"
+        rotation="0 0 90"
+        color="black"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-8.4 2.1 0"
+        scale=".05 .25 .05"
+        color="tomato"
+      ></a-cylinder>
+
+      <a-cylinder
+        position="-8.3 2 0"
+        scale=".075 .5 .075"
+        rotation="0 0 90"
+        color="black"
+      ></a-cylinder>
+
+      <a-box
+        position="-8.1 2 0"
+        scale="1.25 .02 .15"
+        rotation="0 0 90"
+        animation="property: rotation; from: 0 0 90; to: 90 0 90; dur: 250; easing: linear; loop: true"
+        color="gray"
+      ></a-box>
+
+      <a-box
+        position="-8.1 2 0"
+        scale="1.25 .02 .15"
+        rotation="90 0 90"
+        animation="property: rotation; to: 180 0 90; dur: 250; easing: linear; loop: true"
+        color="gray"
+      ></a-box>
+
+      <!-- Small Table-->
+
+      <a-box position="-3.5 1 -9.5" scale="3 .10 1.25" color="black"></a-box>
+
+      <a-box
+        position="-3.5 .25 -9.5"
+        scale="3.5 .10 1.25"
+        color="black"
+      ></a-box>
+
+      <a-box
+        position="-5 .1 -9"
+        scale="1.8 .1 .1"
+        rotation="0 0 75"
+        color="black"
+      ></a-box>
+
+      <a-box
+        position="-5 .1 -9.9"
+        scale="1.8 .1 .1"
+        rotation="0 0 75"
+        color="black"
+      ></a-box>
+
+      <a-box
+        position="-2 .1 -9.9"
+        scale="1.8 .1 .1"
+        rotation="0 0 -75"
+        color="black"
+      ></a-box>
+
+      <a-box
+        position="-2 .1 -9"
+        scale="1.8 .1 .1"
+        rotation="0 0 -75"
+        color="black"
+      ></a-box>
+
+      <a-box position="-2.4 1.1 -9.2" scale=".5 .03 .5" color="cyan"></a-box>
+
+      <!--Displate posters-->
+      <a-box
+        position="-3.5 2.75 -9.99"
+        scale="1.5 2 .01"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FSpace_Displate.jpg"
+      ></a-box>
+
+      <a-box
+        position="3 3 -1.4"
+        scale="1.5 2 .01"
+        rotation="0 90 90"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FGeometric_Displate.jpg"
+      ></a-box>
+
+      <a-box
+        position="-3.5 2.75 6.98"
+        scale="1.5 2 .01"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FBioshock_Displate.jpg"
+      ></a-box>
+
+      <!-- Prebuilt models -->
+      <a-entity
+        id="Computer"
+        gltf-model="#ComputerM"
+        position="-6 0 3.35"
+        rotation="0 270 0"
+        scale=".75 .75 .75"
+      ></a-entity>
+
+      <a-entity
+        id="IKEA"
+        gltf-model="#IKEAM"
+        position="-8.95 .8 3.69"
+        scale=".025 .025 .025"
+      ></a-entity>
+
+      <a-entity
+        id="Vive"
+        gltf-model="#ViveM"
+        position="-5.75 1.34 3.4"
+        rotation="0 -225 0 "
+        scale=".5 .5 .5"
+      ></a-entity>
+
+      <a-entity
+        id="Door1"
+        gltf-model="#DoorsM"
+        position="-6 -6.9 0"
+        rotation="0 90 0 "
+        scale="5 5 4"
+      ></a-entity>
+
+      <a-entity
+        id="Door2"
+        gltf-model="#DoorsM"
+        position="-6 -6.9 -6"
+        rotation="0 90 0 "
+        scale="5 5 4"
+      ></a-entity>
+
+      <a-entity
+        id="Window1"
+        gltf-model="#WindowM"
+        position="-10 -2.5 -8.75"
+        rotation="0 90 0 "
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Window2"
+        gltf-model="#WindowM"
+        position="-.75 -2.5 -8.75"
+        rotation="0 90 0 "
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Window3"
+        gltf-model="#WindowM"
+        position="1.75 -2.5 -10"
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Window4"
+        gltf-model="#WindowM"
+        position="1.75 -2.5 3"
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Window5"
+        gltf-model="#WindowM"
+        position="-1 -2.5 8.15"
+        rotation="0 90 0 "
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Window6"
+        gltf-model="#WindowM"
+        position="-9.75 -2.5 8.15"
+        rotation="0 90 0 "
+        scale="1 4 3"
+      ></a-entity>
+
+      <a-entity
+        id="Pillow1"
+        gltf-model="#PillowM"
+        position="2 1 -2.5"
+        scale=".25 .25 .5"
+      ></a-entity>
+
+      <a-entity
+        id="Pillow2"
+        gltf-model="#PillowM"
+        position="2 1 -.4"
+        scale=".25 .25 .5"
+      ></a-entity>
+
+      <a-entity
+        id="Books"
+        gltf-model="#BooksM"
+        position="-4.5 .51 -9"
+        scale=".75 .75 .75"
+        rotation=" 0 -46 0"
+      ></a-entity>
+
+      <a-entity
+        id="Clock"
+        gltf-model="#ClockM"
+        position="2 -.1 2"
+        rotation=" 0 -142 0"
+        sound="src: #tuba; volume:1; on: click"
+      ></a-entity>
+
+      <!-- Floor And Ceiling -->
+      <a-entity
+        id="Floor"
+        position="1.5 0 -4.5"
+        rotation="-90 0 0"
+        geometry="primitive: plane; width: 22; height:23"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FFloor_Texture.jpg?v=160143591923"
+      ></a-entity>
+      <a-entity
+        id="Ceiling"
+        position="1.5 5 -4.5"
+        rotation="-270 0 0"
+        geometry="primitive: plane; width: 22; height:23"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FCeiling_Texture.jpg?v=1601436810572"
+      ></a-entity>
+      <!-- Walls around the Room-->
+      <a-entity
+        id="WallF"
+        position="1.5 2 -10"
+        geometry="primitive: plane; width: 22; height:6"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FWall_Texture.jpg?v=1601436273506"
+      ></a-entity>
+      <a-entity
+        id="WallB"
+        position="1.5 2 7"
+        rotation="180 0 0"
+        geometry="primitive: plane; width: 22; height:6"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FWall_Texture.jpg?v=1601436273506"
+      ></a-entity>
+      <a-entity
+        id="WallL"
+        position="-9.4 2 -4"
+        rotation="0 90 0"
+        geometry="primitive: plane; width:22; height:6"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FWall_Texture.jpg?v=1601436273506"
+      ></a-entity>
+      <a-entity
+        id="WallR"
+        position="3 2 -4"
+        rotation="0 -90 0"
+        geometry="primitive: plane; width: 22; height:6"
+        material="src:https://cdn.glitch.com/d9651007-20c4-49cd-9058-3a83973d09f3%2FWall_Texture.jpg?v=1601436273506"
+      ></a-entity>
+
+      <!-- Camera moving around -->
+      <a-entity position="0 1.3 3">
+        <a-camera
+          universal-controls="movementSpeed: 1.0; rotationSensitivity: 0.1; movementEasing: 10; movementAcceleration: 10"
+          position="0 1.6 0"
+          rotation="0 0 0"
+          look-controls="pointerLockEnabled: true"
+        >
+          <a-entity
+            raycaster="far: 100; objects: .intersectable"
+            cursor="fuse: true; fuseTimeout: 1000"
+            geometry="primitive: ring; radiusOuter: 0.015;radiusInner: 0.01; segmentsTheta: 32"
+            material="color: #283644; shader: flat"
+            position="0 0 -0.75"
+          ></a-entity>
+        </a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
